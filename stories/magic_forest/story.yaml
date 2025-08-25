@@ -1,0 +1,136 @@
+title: "Подорож у зачарований ліс (автор: ШІ)"
+start: start
+
+story:
+  start:
+    text: "Ти стоїш на узліссі. Перед тобою темний, казковий ліс."
+    choices:
+      - text: "Зайти в ліс"
+        next: forest
+      - text: "Обійти його й піти до села"
+        next: village
+      - text: "Сісти й відпочити"
+        next: rest
+
+  forest:
+    text: "Ти йдеш між високими деревами. На стежці розходження."
+    choices:
+      - text: "Піти праворуч — до світла"
+        next: lake
+      - text: "Піти ліворуч — до темряви"
+        next: cave
+      - text: "Повернутися назад"
+        next: start
+
+  village:
+    text: "У селі тебе зустріли місцеві. Вони виглядають насторожено."
+    choices:
+      - text: "Попросити їжі"
+        next: food
+      - text: "Запитати дорогу додому"
+        next: ending_safe
+      - text: "Втекти з села"
+        next: forest
+
+  rest:
+    text: "Ти задрімав… І прокинувся від шереху."
+    choices:
+      - text: "Схопитися й утекти"
+        next: wolves
+      - text: "Лежати тихо"
+        next: traveler
+
+  lake:
+    text: "Перед тобою сяюче озеро. У воді щось блищить."
+    choices:
+      - text: "Зануритися"
+        next: treasure
+      - text: "Обійти озеро"
+        next: tower
+
+  cave:
+    text: "Темна печера. Усередині горять червоні очі."
+    choices:
+      - text: "Зайти всередину"
+        next: dragon
+      - text: "Втекти"
+        next: forest
+
+  food:
+    text: "Селяни поділилися їжею. Тобі стало легше."
+    choices:
+      - text: "Залишитися з ними"
+        next: ending_village
+      - text: "Продовжити мандрівку"
+        next: forest
+
+  wolves:
+    text: "З кущів вискочила зграя вовків!"
+    choices:
+      - text: "Спробувати втекти"
+        next: ending_escape
+      - text: "Битися"
+        next: ending_death
+
+  traveler:
+    text: "Це виявився мандрівник. Він простягнув тобі руку допомоги."
+    choices:
+      - text: "Довіритися й піти з ним"
+        next: ending_mentor
+      - text: "Відмовитися і втекти"
+        next: forest
+
+  treasure:
+    text: "Ти пірнув і дістав скриню з золотом!"
+    choices:
+      - text: "Взяти золото й утекти"
+        next: ending_greedy
+      - text: "Відмовитися від золота"
+        next: tower
+
+  tower:
+    text: "На березі стоїть висока вежа. Всередині хтось живе."
+    choices:
+      - text: "Зайти всередину"
+        next: wizard
+      - text: "Втекти назад"
+        next: forest
+
+  dragon:
+    text: "У печері спав дракон. Тепер він прокинувся!"
+    choices:
+      - text: "Спробувати домовитися"
+        next: wizard
+      - text: "Відчайдушно напасти"
+        next: ending_death
+
+  wizard:
+    text: "Чарівник зустрів тебе і запропонував силу."
+    choices:
+      - text: "Прийняти силу"
+        next: ending_power
+      - text: "Відмовитися"
+        next: ending_safe
+
+endings:
+  ending_safe:
+    name: "Безпечне повернення"
+    text: "Ти безпечно повернувся додому. Але пригоди залишилися незавершеними."
+  ending_escape:
+    name: "Втеча від вовків"
+    text: "Тобі дивом вдалося втекти від вовків. Ти вижив, але назавжди боїшся темряви."
+  ending_death:
+    name: "Сумний кінець"
+    text: "Ти загинув у нерівній боротьбі. Це сумний кінець."
+  ending_greedy:
+    name: "Прокляте багатство"
+    text: "Ти забрав золото. Воно принесло тобі багатство, але й прокляття."
+  ending_village:
+    name: "Спокійне життя"
+    text: "Ти залишився жити серед селян. Нове спокійне життя стало твоїм вибором."
+  ending_mentor:
+    name: "Наставник"
+    text: "Мандрівник став твоїм наставником. Разом ви вирушили у нові пригоди."
+  ending_power:
+    name: "Могутній чарівник"
+    text: "Ти прийняв силу чарівника і став могутнім володарем. Але ціна була висока..."
